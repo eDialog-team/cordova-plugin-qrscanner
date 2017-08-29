@@ -461,7 +461,11 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
                 //Configure the camera (front/back)
                 CameraSettings settings = new CameraSettings();
                 settings.setRequestedCameraId(getCurrentCameraId());
-                settings.setFocusMode(CameraSettings.FocusMode.MACRO)
+                
+                // add drakirus
+                settings.setFocusMode(CameraSettings.FocusMode.MACRO);
+                settings.setAutoFocusEnabled(false);
+
                 mBarcodeView.setCameraSettings(settings);
 
                 FrameLayout.LayoutParams cameraPreviewParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
